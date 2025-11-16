@@ -15,7 +15,7 @@ Follow these steps to log in using the Hugging Face Command Line Interface (CLI)
 
 ### A. Terminal Login
 
-1. **Open your terminal** .
+1. **Open your terminal** . 
 2. **Run the login command:**
     ```bash
     huggingface-cli login
@@ -108,16 +108,15 @@ a probabilistic inference objective that remains valid even with unpaired data.
 ## Core Objective
 
 PMPO reformulates preference learning as a **Bayesian inference problem**:
-\[
-\pi^* = \arg\max_\pi \mathbb{E}_{x,y} [r(x,y)] - \beta D(\pi || \pi_{\text{ref}})
-\]
+\\
+\pi^* = \arg\max_\pi \mathbb{E}_{x,y} [r(x,y)] - \beta D(\pi || \pi_{\text{ref}}) 
+\\\\
 where \( D(\cdot||\cdot) \) is a divergence metric controlling stability and exploration.
 
 When both *positive* and *negative* examples exist, PMPO optimizes:
-\[
+\\
 \mathcal{L}_{PMPO} = \mathbb{E}_{(x,y^+)}[\log \pi(y^+|x)] - \mathbb{E}_{(x,y^-)}[\log \pi(y^-|x)] - \beta D(\pi || \pi_{ref})
-\]
-
+\\\\
 ---
 
 ##  Divergence Variants
@@ -146,9 +145,6 @@ Together, PMPO creates a **balance between exploration and alignment** without n
 - If memory-bound → use gradient checkpointing or mixed precision.
 
 ---
-
-
-
 
 
 > **Note:**  
