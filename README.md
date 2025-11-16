@@ -39,8 +39,61 @@ After logging in, run `DatasetRetrieval.ipynb` to obtain the data in separate tr
 
 ---
 
+## Setup
 
+To get started with the project, follow these steps:
 
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/farhan11166/DSL501-PROJECT.git
+    cd DSL501-PROJECT
+    ```
+2.  **Create a virtual environment (recommended):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+---
+
+## Usage
+
+### 1. Prepare the Dataset
+
+After logging in to Hugging Face CLI (as described above) and installing dependencies, run the `DatasetRetrieval.ipynb` notebook to download and prepare the dataset. This will create the necessary train and test splits.
+
+Alternatively, you can use the `prepare_dataset.py` script:
+
+```bash
+python scripts/prepare_dataset.py
+```
+
+### 2. Train the Model
+
+To train the PMPO model, use the `train.py` script:
+
+```bash
+python scripts/train.py --config_path configs/default.yaml
+```
+
+You can modify `configs/default.yaml` to adjust training parameters.
+
+### 3. Experiment with Jupyter Notebooks
+
+Explore various experimental setups and PMPO configurations using the provided Jupyter notebooks:
+
+*   `PMPO_ALPHA=...GPT_NEO.ipynb`
+*   `PMPO_On_GPT2.ipynb`
+*   `environments.ipynb`
+*   `Evaluation.ipynb`
+*   `PreprocessingForPMPO.ipynb`
+*   `PMPO_usingKL_Divergence.ipynb`
+
+---
 
 # PMPO Theory & Intuition
 
@@ -99,7 +152,6 @@ Together, PMPO creates a **balance between exploration and alignment** without n
 
 
 > **Note:**  
-> This README will be updated as the project progresses.  
 > For detailed information about the project, please refer to [SoP_ML.pdf](https://github.com/farhan11166/DSL501-PROJECT/blob/main/SoP_ML.pdf).
 
 ## Codebase Overview
